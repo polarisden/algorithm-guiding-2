@@ -6,7 +6,21 @@
 */
 
 function heaviestBagPair(bagWeights) {
-  // Start Coding Here
+    let maxWeight = 0 
+    let weight
+    let result = []
+
+    if (bagWeights.length < 2) return null
+
+    for (i=0; i<bagWeights.length-1; i++){
+        weight = bagWeights[i] + bagWeights[i+1]
+        if (weight > maxWeight){
+            result = [bagWeights[i],bagWeights[i+1]]
+            maxWeight = weight
+        }
+    }
+
+    return result
 }
 
 console.log(heaviestBagPair([5, 8, 12, 15, 7]));
